@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  d_o_b: 2022-06-11
+  tribe: MyString
+  father_name: MyString
+  alive: MyString
+  mother_name: MyString
+  alive: MyString
+  contact_one: MyString
+  contact_two: MyString
+  street: MyString
+  city: MyString
+  region: MyString
+  status_of_parents: MyString
+  qualification: MyString
+  pervious_school: MyString
+  physical_wellbeing: MyString
+  mental_wellbeing: MyString
+  health_issues: MyString
+  admission_number: MyString
+
+two:
+  full_name: MyString
+  d_o_b: 2022-06-11
+  tribe: MyString
+  father_name: MyString
+  alive: MyString
+  mother_name: MyString
+  alive: MyString
+  contact_one: MyString
+  contact_two: MyString
+  street: MyString
+  city: MyString
+  region: MyString
+  status_of_parents: MyString
+  qualification: MyString
+  pervious_school: MyString
+  physical_wellbeing: MyString
+  mental_wellbeing: MyString
+  health_issues: MyString
+  admission_number: MyString
