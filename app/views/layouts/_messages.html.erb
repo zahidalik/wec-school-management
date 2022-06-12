@@ -1,0 +1,14 @@
+<div data-controller="autohide">
+  <% if success %>
+    <p class="flex justify-center items-center px-5 py-3 bg-green-300 rounded-lg border border-green-700 text-green-700 text-lg absolute right-10 top-32"><%= success %></p>
+  <% end %>
+  <% if danger %>
+    <p class="flex justify-center items-center px-5 py-3 bg-red-300 rounded-lg border border-red-700 text-red-700 text-lg absolute right-10 top-32"><%= danger %></p>
+  <% end %>
+  <% if info %>
+    <p class="flex justify-center items-center px-5 py-3 bg-blue-300 rounded-lg border border-blue-700 text-blue-700 text-lg absolute right-10 top-32"><%= info %></p>
+  <% end %>
+  <% if warning %>
+    <p class="flex justify-center items-center px-5 py-3 bg-yellow-300 rounded-lg border border-yellow-700 text-yellow-700 text-lg absolute right-10 top-32"><%= warning %></p>
+  <% end %>
+</div>
