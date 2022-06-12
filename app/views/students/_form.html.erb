@@ -1,0 +1,68 @@
+<%= form_with model: student, html: { class: "flex flex-col justify-center space-y-3 overflow-auto"} do |f| %>
+  <div class="flex flex-col justify-center">
+    <%= f.label :full_name, class: "text-xl text-gray-700" %>
+    <%= f.text_field :full_name, placeholder: "First Second Third name", class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+  </div>
+  
+  <div class="flex flex-col justify-center">
+    <%= f.label :d_o_b, "Date of birth", class: "text-xl text-gray-700" %>
+    <%= f.date_field :d_o_b, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <%= f.label :father_name, "Father's name", class: "text-xl text-gray-700" %>
+    <%= f.text_field :father_name, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <%= f.label :father_alive, "Father Alive/Deceased", class: "text-xl text-gray-700" %>
+    <%= f.select :father_alive, ["Alive", "Deceased"], { include_blank: "" }, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500"  %>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <%= f.label :mother_name, "Mother's name", class: "text-xl text-gray-700" %>
+    <%= f.text_field :mother_name, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <%= f.label :mother_alive, "Mother Alive//Deceased", class: "text-xl text-gray-700" %>
+    <%= f.select :mother_alive, ["Alive", "Deceased"], { include_blank: "" }, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <%= f.label :contact_one, "Contact Number", class: "text-xl text-gray-700" %>
+    <%= f.text_field :contact_one, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <%= f.label :contact_two, "Another Contact Number", class: "text-xl text-gray-700" %>
+    <%= f.text_field :contact_two, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <div class="text-xl text-gray-700">Address</div>
+    <%= f.text_field :street, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+    <%= f.text_field :city, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+    <%= f.text_field :region, class: "px-2 text-gray-700 text-lg border border-gray-400 rounded outline-none focus:border-blue-500" %>
+  </div>
+
+  <div class="flex flex-col justify-center"></div>
+
+  <div class="flex flex-col justify-center"></div>
+
+  <div class="flex flex-col justify-center"></div>
+
+  <div class="flex flex-col justify-center"></div>
+
+  <div class="flex flex-col justify-center"></div>
+
+  <div class="flex flex-col justify-center"></div>
+
+  <div class="flex flex-col justify-center"></div>
+
+  <div class="flex flex-col justify-center"></div>
+
+  <div class="flex flex-col justify-center"></div>
+
+  <div class="flex flex-col justify-center"></div>
+<% end %>

@@ -11,6 +11,8 @@
   </head>
 
   <body>
+    <%= render partial: 'layouts/navbar' %>
+    <%= turbo_frame_tag 'modal' %>
     <%= yield %>
   </body>
 </html>
