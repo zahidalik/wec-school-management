@@ -1,0 +1,7 @@
+<% provide(:button_name, "Edit Admin" )%>
+
+<%= turbo_frame_tag(dom_id(@admin)) do %>
+  <div class="flex justify-center items-center">
+    <%= render "admins/form", admin: @admin %>
+  </div>
+<% end %>

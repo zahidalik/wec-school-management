@@ -1,22 +1,25 @@
-<div class="bg-slate-200 py-4 flex justify-around items-center sticky top-0">
+<div class="bg-slate-200 py-4 flex justify-around items-center">
   <div class="flex items-baseline space-x-7">
     <%= link_to root_url, class: "text-2xl text-gray-700 rounded border-b-2 border-slate-200 hover:border-b-2 hover:border-gray-700" do %>
       <i class="fa-solid fa-house"></i> WEC SMS
     <% end %>
     <div class="text-gray-700 text-lg hover:text-xl hover:bg-gray-400 hover:rounded hover:px-2 ease-in-out duration-300">
-      <i class="fa-solid fa-user-group"></i> Students 
+      <i class="fa-solid fa-calendar"></i> Calendar
     </div>
     <div class="text-gray-700 text-lg hover:text-xl hover:bg-gray-400 hover:rounded hover:px-2 ease-in-out duration-300">
-      <i class="fa-solid fa-chalkboard"></i> Classes
+      <i class="fa-solid fa-circle-info"></i> Prospectus
     </div>
     <div class="text-gray-700 text-lg hover:text-xl hover:bg-gray-400 hover:rounded hover:px-2 ease-in-out duration-300">
-      <i class="fa-solid fa-chalkboard-user"></i> Teachers
+      <i class="fa-solid fa-circle-question"></i> About
     </div>
   </div>
   <div class="flex justify-center items-center space-x-3">
     <% if logged_in? %>
       <%= button_to logout_url, method: :delete, class: "bg-red-600 px-2 py-1 text-gray-50 rounded-lg text-lg hover:bg-red-700 ease-in-out duration-300" do %>
         <i class="fa-solid fa-lock"></i> Log out
+      <% end %>
+      <%= link_to admin_path(current_user), class: "px-2 py-1 text-lg bg-yellow-600 text-gray-50 shadow-xl rounded-tr-lg rounded-bl-lg" do %>
+        <%= current_user.username %> - role
       <% end %>
     <% else %>
       <%= link_to login_path, class: "bg-green-600 px-2 py-1 text-gray-50 rounded-lg text-lg hover:bg-green-700 ease-in-out duration-300" do %>

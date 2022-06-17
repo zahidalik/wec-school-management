@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   
   resources :students
 
-  resources :admins
+  resources :admins do
+    member do
+      get 'profile', to: 'admins#profile'
+    end
+  end
 end
