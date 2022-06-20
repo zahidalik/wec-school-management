@@ -1,27 +1,11 @@
 <%= turbo_frame_tag "admin_dashboard" do %>
-  <%= turbo_frame_tag(dom_id(@admin)) do %>
-  <div class="min-h-screen grid grid-cols-4 gap-4 mt-8 flex">
-    <div class="ml-32 col-span-3 flex flex-col space-y-2">
-      <div class="text-lg text-gray-800">Name: <strong><%= @admin.full_name %></strong></div>
-      <div class="text-lg text-gray-800">Username: <strong><%= @admin.username %></strong></div>
-      <div class="text-lg text-gray-800">email: <strong><%= @admin.email %></strong></div>
-      <div class="text-lg text-gray-800">Contact: <strong><%= @admin.contact_one %></strong></div>
-      <div class="text-lg text-gray-800">Another Contact: <strong><%= @admin.contact_two %></strong></div>
-      <div class="text-lg text-gray-800">Address</div>
-      <div class="flex flex-col space-y-2 ml-4">
-        <div class="text-lg text-gray-800">Street: <strong><%= @admin.street %></strong></div>
-        <div class="text-lg text-gray-800">City: <strong><%= @admin.city %></strong></div>
-        <div class="text-lg text-gray-800">Region: <strong><%= @admin.region %></strong></div>
-      </div>
-      <%= link_to edit_admin_path(@admin), class: "py-2 bg-blue-700 text-gray-50 flex justify-center items-center hover:bg-blue-900" do %>
-        Edit
-      <% end %>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <%= image_tag 'pic_background.jpg', class: "h-48 w-32 rounded-tl-lg rounded-br-lg shadow-lg" %>
-      <span class=""><%= @admin.full_name %></span>
-    </div>
+  <div class="ml-52 w-2/3">
+    <%= render "admins/admin", admin: @admin %>
   </div>
-  <% end %>
+<% end %>
+
+<%= turbo_frame_tag "admin" do %>
+  <div class="ml-16">
+    <%= render "admins/admin", admin: @admin %>
+  </div>
 <% end %>

@@ -1,12 +1,17 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update]
+  before_action :set_student, only: [:show, :profile, :edit, :update]
+  before_action :authenticate_super_admin_or_accountant!, only: [:new, :create]
 
   def index
-
+    @students = Student.all
   end
 
   def show
     
+  end
+
+  def profile
+
   end
 
   def new

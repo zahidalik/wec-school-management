@@ -1,0 +1,11 @@
+<%= turbo_frame_tag "admin_dashboard" do %>
+  <div class="ml-52 w-2/3">
+    <%= render "students/student", student: @student %>
+  </div>
+<% end %>
+
+<%= turbo_frame_tag "student" do %>
+  <div class="ml-16">
+    <%= render "students/student", student: @student %>
+  </div>
+<% end %>

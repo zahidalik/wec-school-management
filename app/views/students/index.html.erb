@@ -1,0 +1,15 @@
+<%= turbo_frame_tag "admin_dashboard" do %>
+  <%= turbo_frame_tag "students_list" do %>
+    <div class="min-h-screen w-full flex">
+      <div class="w-60 bg-slate-100 border-r border-gray-400">
+        <div class="px-6 pt-8 pb-2 border-b border-gray-500 text-lg font-bold text-gray-700">List of all students</div>
+        <% @students.each do |admin| %>
+          <%= render "students/each_student", student: student %>
+        <% end %>
+      </div>
+      <div class="w-2/3">
+        <%= turbo_frame_tag "student" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

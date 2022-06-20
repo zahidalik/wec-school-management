@@ -1,0 +1,10 @@
+<%= turbo_stream.replace "new_admin" do %>
+  <div></div>
+<% end %>
+<%= turbo_stream.update "flash" do %>
+  <div data-controller="autohide">
+    <div class="flex justify-center items-center px-5 py-3 bg-green-300 rounded-lg border border-green-700 text-green-700 text-lg absolute right-10 top-32">
+      Successfully saved admin
+    </div>
+  </div>
+<% end %>

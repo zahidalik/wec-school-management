@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
-  resources :students
+  resources :students do
+    member do
+      get 'profile', to: 'students#profile'
+    end
+  end
 
   resources :admins do
     member do

@@ -1,11 +1,8 @@
 <% provide(:button_name, "Edit Student") %>
 
-<%= turbo_frame_tag 'admin_dashboard' do %> 
-<div class="animate__animated animate__slideInRight">
-  <div class="mt-12 text-4xl text-gray-700 font-light flex justify-center items-center">Edit Student</div>
-  
-  <div class="w-full flex justify-center items-center">
-    <%= render partial: 'form', locals: { student: @student } %>
+<%= turbo_frame_tag(dom_id(@student)) do %>
+  <div class="flex flex-col justify-center items-center">
+    <div class="text-2xl pt-8">Edit <%= @student.full_name %>'s profile</div>
+    <%= render "students/form", student: @student %>
   </div>
-</div>
 <% end %>

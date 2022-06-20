@@ -1,11 +1,11 @@
 <% provide(:button_name, "New Student") %>
 
 <%= turbo_frame_tag 'admin_dashboard' do %> 
-<div class="animate__animated animate__slideInRight">
-  <div class="mt-12 text-4xl text-gray-700 font-light flex justify-center items-center">New Student</div>
-  
-  <div class="w-full flex justify-center items-center">
-    <%= render partial: 'form', locals: { student: @student } %>
-  </div>
-</div>
+  <%= turbo_frame_tag "new_student" do %>
+    <div class="mt-12 text-4xl text-gray-700 font-light flex justify-center items-center">New Student</div>
+    
+    <div class="w-full flex justify-center items-center">
+      <%= render partial: 'form', locals: { student: @student } %>
+    </div>
+  <% end %>
 <% end %>

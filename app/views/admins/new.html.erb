@@ -1,0 +1,11 @@
+<% provide(:button_name, "New Admin" )%>
+
+<%= turbo_frame_tag "admin_dashboard" do %>
+  <%= turbo_frame_tag "new_admin" do %>
+    <div class="pt-8 text-4xl text-gray-700 font-light flex justify-center items-center">New Admin</div>
+
+    <div class="mx-32">
+      <%= render "admins/form", admin: @admin %>
+    </div>
+  <% end %>
+<% end %>

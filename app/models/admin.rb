@@ -1,4 +1,5 @@
 class Admin < ApplicationRecord
+  rolify
   validates :username, presence: true
   validates :username, uniqueness: true
 

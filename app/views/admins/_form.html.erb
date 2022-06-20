@@ -1,62 +1,48 @@
-<%= form_with model: admin, html: {class: "mt-8 min-h-screen flex flex-col items-start space-y-3"} do |f| %>
+<%= form_with model: admin, html: {class: "mx-8 py-8 min-h-screen text-lg flex flex-col justify-center space-y-2"} do |f| %>
+  
   <% if admin.errors.any? %>
-    <% admin.errors.full_messages.each do |msg| %>
-      <div class="px-3 py-2 flex flex-col justify-center bg-red-200 border-2 border-red-500 text-red-500 text-lg animate__animated animate__headShake">
-        <div><%= pluralize(admin.errors.count, 'error') %> stopped editing</div>
+    <div class="px-3 py-2 flex flex-col justify-center bg-red-200 border-2 border-red-500 text-red-500 animate__animated animate__headShake">
+      <div>The form has <%= pluralize(admin.errors.count, 'error') %></div>
+      <% admin.errors.full_messages.each do |msg| %>
         <div> - <%= msg %></div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
   
-  <div class="flex justify-center items-center space-x-3">
-    <%= f.label :full_name, class: "text-gray-700 text-lg" %>
-    <%= f.text_field :full_name, class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
-  </div>
-
-  <div class="flex justify-center items-center space-x-3">
-    <%= f.label :username, class: "text-gray-700 text-lg" %>
-    <%= f.text_field :username, class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
-  </div>
-
-  <div class="flex justify-center items-center space-x-3">
-    <%= f.label :email, class: "text-gray-700 text-lg" %>
-    <%= f.email_field :email, class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
-  </div>
-
-  <div class="flex justify-center items-center space-x-3">
-    <%= f.label :contact_one, "Contact", class: "text-gray-700 text-lg" %>
-    <%= f.text_field :contact_one, class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
-  </div>
-
-  <div class="flex justify-center items-center space-x-3">
-    <%= f.label :contact_two, "Another Contact", class: "text-gray-700 text-lg" %>
-    <%= f.text_field :contact_two, class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
-  </div>
-
-  <div class="flex justify-center items-center space-x-3">
-    <div class="text-gray-700 text-lg">Address:</div>
-    <div class="flex justify-center items-center space-x-3">
-      <%= f.text_field :street, placeholder: "Street", class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
-    </div>
-    <div class="flex justify-center items-center space-x-3">
-      <%= f.text_field :city, placeholder: "City", class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
-    </div>
-    <div class="flex justify-center items-center space-x-3">
-      <%= f.text_field :region, placeholder: "Region", class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+  <%= f.label :full_name, class: "text-gray-700" %>
+  <%= f.text_field :full_name, class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+  
+  <%= f.label :username, class: "text-gray-700" %>
+  <%= f.text_field :username, class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+  
+  <%= f.label :email, class: "text-gray-700" %>
+  <%= f.email_field :email, class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+  
+  <%= f.label :contact_one, "Contact", class: "text-gray-700" %>
+  <%= f.text_field :contact_one, class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+  
+  <%= f.label :contact_two, "Another Contact", class: "text-gray-700" %>
+  <%= f.text_field :contact_two, class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+  
+  <div class="flex justify-center items-center space-x-3 px-2 py-1 border border-gray-400 rounded-lg">
+    <div class="text-gray-700">Address:</div>
+    <div class="flex flex-col justify-center items-center space-y-2">
+      <%= f.text_field :street, placeholder: "Street", class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+      <%= f.text_field :city, placeholder: "City", class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+      <%= f.text_field :region, placeholder: "Region", class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
     </div>
   </div>
 
-  <div class="flex justify-center items-center space-x-3">
-    <%= f.label :password, class: "text-gray-700 text-lg" %>
-    <%= f.password_field :password, class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
-  </div>
+  <%= f.label :password, class: "text-gray-700" %>
+  <%= f.password_field :password, class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+  
+  <%= f.label :password_confirmation, class: "text-gray-700" %>
+  <%= f.password_field :password_confirmation, class: "px-2 py-1 text-gray-700 border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
 
-  <div class="flex justify-center items-center space-x-3">
-    <%= f.label :password_confirmation, class: "text-gray-700 text-lg" %>
-    <%= f.password_field :password_confirmation, class: "px-2 py-1 text-gray-700 text-lg border border-gray-400 rounded-lg outline-none focus:border-2 focus:border-blue-500 " %>
+  <div class="flex flex-wrap justify-center items-center space-x-2 text-gray-700">
+    <div class="font-bold">Roles:</div>
+    <%= f.collection_check_boxes :role_ids, Role.all, :id, :name %>
   </div>
-
-  <div class="flex justify-center items-center space-x-3">
-    <%= f.submit yield(:button_name), class: "bg-blue-700 px-2 py-1 text-gray-50 text-lg flex justify-center items-center hover:bg-blue-800 cursor-pointer" %>
-  </div>
+  
+  <%= f.submit yield(:button_name), class: "bg-blue-700 px-2 py-1 text-gray-50 flex justify-center items-center hover:bg-blue-800 cursor-pointer" %>
 <% end %>

@@ -1,5 +1,10 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :profile, :edit, :update]
+  before_action :authenticate_super_admin!, only: [:new, :create, :edit, :update, :index]
+  
+  def index
+    @admins = Admin.all
+  end
   
   def show  
   end
@@ -14,6 +19,14 @@ class AdminsController < ApplicationController
 
   def create
     @admin = Admin.new(admin_params)
+    if @admin.save
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to root_path}
+      end
+    else
+      render :new, status: :bad_request
+    end
   end
 
   def edit
@@ -35,6 +48,7 @@ class AdminsController < ApplicationController
 
   def admin_params
     params.require(:admin).permit(:full_name, :username, :email, :contact_one, 
-                                  :contact_two, :street, :city, :region, :password, :password_confirmation)
+                                  :contact_two, :street, :city, :region, :password,
+                                  :password_confirmation, role_ids: [])
   end
 end

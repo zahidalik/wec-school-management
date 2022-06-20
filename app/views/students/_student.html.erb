@@ -1,0 +1,6 @@
+<%= turbo_frame_tag(dom_id(student)) do %>
+  <%= student.full_name %>
+  <%= link_to edit_student_path(student), class: "px-2 py-1 bg-blue-700 text-gray-50 text-sm rounded" do %>
+    edit
+  <% end %>
+<% end %>
