@@ -1,0 +1,25 @@
+<%= turbo_frame_tag(dom_id(student)) do %>
+  <div class="flex flex-col ml-8 space-y-2 text-gray-700">
+    <div class="flex justify-center items-center text-2xl font-bold"><%= student.full_name %></div>
+    <div>DOB: <strong><%= student.d_o_b.strftime("%d %B %Y") %></strong></div>
+    <div>Tribe: <strong><%= student.tribe %></strong></div>
+    <div>Father's Name: <strong><%= student.father_name %></strong> - <strong><%= student.father_alive %></strong></div>
+    <div>Mother's Name: <strong><%= student.mother_name %></strong> - <strong><%= student.mother_alive %></strong></div>
+    <div>Contact: <strong><%= student.contact_one %></strong></div>
+    <div>Another Contact: <strong><%= student.contact_two %></strong></div>
+    <div>Adress: <strong><%= student.street %></strong>, <strong><%= student.city %></strong>, <strong><%= student.region %></strong></div>
+    <div>Parents Living Together? <strong><%= student.status_of_parents %></strong></div>
+    <div>Qualification at Admission: <strong><%= student.qualification %></strong></div>
+    <div>Previous School: <strong><%= student.pervious_school %></strong></div>
+    <div>Physical Wellbeing: <strong><%= student.physical_wellbeing %></strong></div>
+    <div>Mental Wellbeing: <strong><%= student.mental_wellbeing %></strong></div>
+    <div>Any Health Issues: <strong><%= student.health_issues %></strong></div>
+    <div>Boarding Status: <strong><%= student.boarding_status %></strong></div>
+    <div>Admission Number: <strong><%= student.admission_number %></strong></div>
+    <div>Account created at: <strong><%= student.created_at.strftime("%d %B %Y - %l:%M %p (%:z)") %></strong></div>
+    <%= link_to edit_student_path(student),
+        class: "py-1 text-gray-50 bg-blue-700 rounded hover:bg-blue-800 ease-in-out duration-300 flex justify-center items-center" do %>
+      Edit
+    <% end %>
+  </div>
+<% end %>

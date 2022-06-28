@@ -1,8 +1,10 @@
 <% provide(:button_name, "Edit Student") %>
 
-<%= turbo_frame_tag(dom_id(@student)) do %>
-  <div class="flex flex-col justify-center items-center">
-    <div class="text-2xl pt-8">Edit <%= @student.full_name %>'s profile</div>
-    <%= render "students/form", student: @student %>
-  </div>
+<%= turbo_frame_tag "student_info" do %>
+  <%= turbo_frame_tag(dom_id(@student)) do %>
+    <div class="mt-8 flex flex-col justify-center items-center">
+      <div class="text-xl pl-2 text-gray-700">Edit <%= @student.full_name %>'s profile</div>
+      <%= render "students/form", student: @student %>
+    </div>
+  <% end %>
 <% end %>

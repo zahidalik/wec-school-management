@@ -3,12 +3,13 @@
     <div class="min-h-screen w-full flex">
       <div class="w-60 bg-slate-100 border-r border-gray-400">
         <div class="px-6 pt-8 pb-2 border-b border-gray-500 text-lg font-bold text-gray-700">List of all students</div>
-        <% @students.each do |admin| %>
+        <% @students.each do |student| %>
           <%= render "students/each_student", student: student %>
         <% end %>
       </div>
+      <%= turbo_frame_tag "student"%>
       <div class="w-2/3">
-        <%= turbo_frame_tag "student" %>
+        <%= turbo_frame_tag "student_info" %>
       </div>
     </div>
   <% end %>

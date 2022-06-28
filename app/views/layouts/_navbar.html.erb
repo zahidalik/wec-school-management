@@ -19,10 +19,7 @@
         <i class="fa-solid fa-lock"></i> Log out
       <% end %>
       <%= link_to admin_path(current_user), class: "px-2 py-1 text-lg bg-yellow-600 text-gray-50 shadow-xl rounded-tr-lg rounded-bl-lg" do %>
-        <%= current_user.username %> - 
-        <% current_user.roles.each do |role| %>
-          <span class="text-sm"><%= role.name.split('_').join(" ").upcase %></span>
-        <% end %>
+        <%= current_user.username %>'s dashboard
       <% end %>
     <% else %>
       <%= link_to login_path, class: "bg-green-600 px-2 py-1 text-gray-50 rounded-lg text-lg hover:bg-green-700 ease-in-out duration-300" do %>

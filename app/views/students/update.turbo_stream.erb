@@ -1,0 +1,13 @@
+<%= turbo_stream.replace "student_info" do %>
+  <%= turbo_frame_tag(dom_id(student)) do %>
+    <div></div>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.update "flash" do %>
+  <div data-controller="autohide">
+    <div class="flex justify-center items-center px-5 py-3 bg-green-300 rounded-lg border border-green-700 text-green-700 text-lg absolute right-10 top-32">
+      Successfully edited <%= @student.full_name %>'s account
+    </div>
+  </div>
+<% end %>

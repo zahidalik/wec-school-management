@@ -1,2 +1,11 @@
 <%= render partial: "layouts/menu" %>
-<%= turbo_frame_tag "admin_dashboard" %>
+<%= turbo_frame_tag "admin_dashboard" do %>
+  <div class="h-80 flex flex-col justify-end items-center text-4xl text-gray-300 font-bold">
+    <div><%= @admin.full_name %></div>
+    <div class="italic">
+      <% @admin.roles.each do |role| %>
+        Use the menu for <%= role.name.split('_').join(" ").upcase %> actions
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -67,8 +67,8 @@
   </div>
 
   <div class="flex flex-col justify-center">
-    <%= f.label :previous_school, "School last attended", class: "text-gray-700" %>
-    <%= f.text_field :previous_school, placeholder: "Name of the school - class", class: "px-3 py-2 text-gray-700 border border-gray-400 rounded outline-none focus:border-blue-500" %>
+    <%= f.label :pervious_school, "School last attended", class: "text-gray-700" %>
+    <%= f.text_field :pervious_school, placeholder: "Name of the school - class", class: "px-3 py-2 text-gray-700 border border-gray-400 rounded outline-none focus:border-blue-500" %>
   </div>
 
   <div class="flex flex-col justify-center">
@@ -97,6 +97,6 @@
   </div>
 
   <div class="flex flex-col justify-center">
-    <%= f.submit yield(:button_name), class: "bg-blue-700 py-3 flex justify-center items-center text-lg text-gray-50"%>
+    <%= f.submit yield(:button_name), class: "bg-blue-700 py-3 flex justify-center items-center text-lg text-gray-50 hover:bg-blue-800 cursor-pointer"%>
   </div>
 <% end %>

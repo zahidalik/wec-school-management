@@ -20,6 +20,15 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
+    
+    if @student.save
+      respond_to do |format|
+        format.turbo_stream
+        format.html {redirect_to root_url}
+      end
+    else
+      render :new, status: :bad_request
+    end
   end
 
   def edit
@@ -27,7 +36,13 @@ class StudentsController < ApplicationController
   end
 
   def update
-    
+    if @student.update(student_params)
+      respond_to do |format|
+        format.turbo_stream
+      end
+    else
+      render :edit, status: :bad_request
+    end
   end
 
   private
@@ -40,6 +55,6 @@ class StudentsController < ApplicationController
     params.require(:student).permit(:full_name, :d_o_b, :tribe, :father_name, :father_alive, :mother_name,
                                     :mother_alive, :contact_one, :contact_two, :street, :city, :region,
                                     :status_of_parents, :qualification, :pervious_school, :physical_wellbeing,
-                                    :mental_wellbeing, :health_issues, :admission_number)
+                                    :mental_wellbeing, :health_issues, :admission_number, :boarding_status)
   end
 end
