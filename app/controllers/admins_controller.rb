@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :profile, :edit, :update]
-  before_action :authenticate_super_admin!, only: [:new, :create, :edit, :update, :index]
+  before_action :authenticate_super_admin!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_super_admin_or_director_ceo!, only: [:index]
   
   def index
     @admins = Admin.all
